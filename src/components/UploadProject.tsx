@@ -1,49 +1,61 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+const Main = styled.div`
+  background-color: white;
+  margin-left: 25%;
+  padding: 5%;
+`;
+const ContainerUpload = styled.div``;
+const ContainerUploaded = styled.div``;
+const Title = styled.h1`
+  color: black;
+`;
+const Form = styled.form`
+  width: 80%;
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10%;
+`;
+const Label = styled.label`
+  width: 20%;
+  margin-bottom: 10px;
+  display: block;
+`;
+const Input = styled.input`
+  width: 60%;
+  margin-bottom: 10px;
+`;
+const Select = styled.select`
+  width: 60%;
+  margin-bottom: 10px;
+`;
+const Option = styled.option``;
+const Textarea = styled.textarea`
+  width: 60%;
+  margin-bottom: 10px;
+  height: 150px;
+`;
+const Button = styled.button`
+  background-color: #b73f3f;
+  border: none;
+  color: white;
+  padding: 10px;
+  margin-top: 40px;
+`;
+const UploadProject = ({ active, setActive }) => {
+  const location = useLocation();
+  const isActive = location.pathname.includes("project");
 
-const UploadProject = () => {
-  const Main = styled.div`
-    background-color: white;
-    margin-left: 25%;
-    padding: 5%;
-  `;
-  const ContainerUpload = styled.div``;
-  const ContainerUploaded = styled.div``;
-  const Title = styled.h1`
-    color: black;
-  `;
-  const Form = styled.form`
-    width: 80%;
-    padding-top: 50px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10%;
-  `;
-  const Label = styled.label`
-    width: 20%;
-    margin-bottom: 10px;
-    display: block;
-  `;
-  const Input = styled.input`
-    width: 60%;
-    margin-bottom: 10px;
-  `;
-  const Select = styled.select`
-    width: 60%;
-    margin-bottom: 10px;
-  `;
-  const Option = styled.option``;
-  const Textarea = styled.textarea`
-    width: 60%;
-    margin-bottom: 10px;
-    height: 150px;
-  `;
-  const Button = styled.button`
-    background-color: #b73f3f;
-    border: none;
-    color: white;
-    padding: 10px;
-    margin-top: 40px;
-  `;
+  useEffect(() => {
+    if (isActive) {
+      setActive((prev) => ({
+        ...prev,
+        projects: isActive,
+      }));
+    }
+  }, [location.pathname]);
 
   return (
     <Main>
