@@ -59,7 +59,11 @@ const UploadProject = () => {
             <Option value="">Web</Option>
             <Option value="">Js</Option>
           </Select>
+
+          <Label htmlFor="">Link: </Label>
+          <Input type="text" />
           <Label htmlFor="">Image:</Label>
+
           <Input type="file" accept="image/*" />
 
           <Button>Submit</Button>

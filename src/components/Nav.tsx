@@ -11,7 +11,9 @@ const Nav = () => {
     height: 400vh;
     position: fixed;
   `;
-
+  const Title = styled.h1`
+    line-height: 27px;
+  `;
   const List = styled.ul`
     margin-top: 10%;
   `;
@@ -28,7 +30,7 @@ const Nav = () => {
 
   return (
     <Main>
-      <h1> Portfolio Dashboard</h1>
+      <Title> Portfolio Dashboard</Title>
       <List>
         <ListItem>
           <Clickable href="#"> Home Page</Clickable>
